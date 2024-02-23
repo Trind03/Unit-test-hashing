@@ -1,8 +1,15 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
-int main()
+
+TEST(test1,test)
 {
-    std::cout << "Hello World" << std::endl;
-    return 0;
+    EXPECT_EQ(1,1,1);
+}
+
+
+int main(int argc, char *argv[])
+{
+    testing::InitGoogleTest(&argc,argv);
+    return RUN_ALL_TESTS();
 }
