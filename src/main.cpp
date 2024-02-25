@@ -1,11 +1,7 @@
-#include <iostream>
 #include <gtest/gtest.h>
+#include <iostream>
+#include "./tests.h"
 
-
-TEST(test1,test)
-{
-    EXPECT_EQ(1,1,1);
-}
 
 
 int main(int argc, char *argv[])
