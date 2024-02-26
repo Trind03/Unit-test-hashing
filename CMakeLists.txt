@@ -8,5 +8,5 @@ add_subdirectory(./lib/googletest)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 # 'Google_Tests_run' is the target name
-add_executable(Hash ./src/main.cpp)
+add_executable (Hash ./src/main.cpp ../lib/hash/sha256.cpp ../lib/hash/sha1.cpp ../lib/hash/sha3.cpp ../lib/hash/md5.cpp)
 target_link_libraries(Hash gtest gtest_main)
