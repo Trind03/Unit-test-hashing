@@ -39,6 +39,6 @@ TEST(Unit_md5,md5)
 int main(int argc, char *argv[])
 {
     testing::InitGoogleTest(&argc,argv);
-    std::future<int>ret = std::async(std::launch::async,RUN_ALL_TESTS);
+    std::future<int>ret = std::async(std::launch::async,&RUN_ALL_TESTS);
     return ret.get();
 }
