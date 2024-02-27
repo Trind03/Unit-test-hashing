@@ -1,4 +1,5 @@
 #include <iostream>
+#include <future>
 #include <gtest/gtest.h>
 #include "../lib/hash/sha256.h"
 #include "../lib/hash/sha1.h"
@@ -38,5 +39,6 @@ TEST(Unit_md5,md5)
 int main(int argc, char *argv[])
 {
     testing::InitGoogleTest(&argc,argv);
-    return RUN_ALL_TESTS();
+    std::future<int>ret = std::async(std::launch::async,RUN_ALL_TESTS);
+    return ret.get();
 }
