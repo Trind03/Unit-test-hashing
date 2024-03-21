@@ -1,11 +1,10 @@
 #include <iostream>
 #include <future>
 #include <gtest/gtest.h>
-#include "../lib/hash/sha256.h"
-#include "../lib/hash/sha1.h"
-#include "../lib/hash/sha3.h"
-#include "../lib/hash/md5.h"
-
+#include "sha256.h"
+#include "md5.h"
+#include "sha1.h"
+#include "sha3.h"
 
 TEST(Unit_sha256,sha256)
 {
