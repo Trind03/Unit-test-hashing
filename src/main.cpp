@@ -1,8 +1,11 @@
 #include <iostream>
 #include <future>
 #include <gtest/gtest.h>
+#include "sha256.h"
+#include "md5.h"
+#include "sha1.h"
+#include "sha3.h"
 
-/*
 TEST(Unit_sha256,sha256)
 {
     SHA256 SHA256;
@@ -38,5 +41,3 @@ int main(int argc, char *argv[])
     std::future<int>ret = std::async(std::launch::async,&RUN_ALL_TESTS);
     return ret.get();
 }
-
-*/
