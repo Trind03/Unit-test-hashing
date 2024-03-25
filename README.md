@@ -1,6 +1,6 @@
 # Unit-test-hashing
 
-This software performes unit tests on these hashing algorithms.
+This software performes unittests on the following hashing algorithms.
 
 ## Dependencies
 
