@@ -15,9 +15,9 @@ TEST(Unit_sha256,sha256)
 
 TEST(Unit_sha1,sha1)
 {
-    SHA1 SHA1;
+    std::unique_ptr<SHA1>(sha1) = std::make_unique<SHA1>();
     std::string _sha1 = "0a4d55a8d778e5022fab701977c5d840bbc486d0";
-    EXPECT_EQ(_sha1,SHA1("Hello World"));
+    EXPECT_EQ(_sha1,(*sha1)("Hello World"));
 }
 
 TEST(Unit_sha3,sha3)
