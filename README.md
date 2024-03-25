@@ -5,7 +5,6 @@ This software performes unittests on the following hashing algorithms.
 - SHA3
 - SHA1
 - MD5
-- Mergesort
 ## Dependencies
 
 - CMake 
