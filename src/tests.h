@@ -4,12 +4,13 @@
 #include "md5.h"
 #include "sha1.h"
 #include "sha3.h"
-
+#include <memory>
 TEST(Unit_sha256,sha256)
 {
-    SHA256 SHA256;
+    //SHA256 SHA256;
+    std::unique_ptr<SHA256>(sha256) = std::make_unique<SHA256>();
     std::string _sha256 = "a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e";
-    EXPECT_EQ(_sha256,SHA256("Hello World"));
+    EXPECT_EQ(_sha256,(*sha256)("Hello World"));
 }
 
 TEST(Unit_sha1,sha1)
