@@ -5,6 +5,7 @@
 #include "md5.h"
 #include "sha1.h"
 #include "sha3.h"
+#include "crc32.h"
 
 TEST(Unit_sha256,sha256)
 {
@@ -32,4 +33,11 @@ TEST(Unit_md5,md5)
     std::unique_ptr<MD5>(md5) = std::make_unique<MD5>();
     const char* _md5 = "b10a8db164e0754105b7a99be72e3fe5";
     EXPECT_EQ(_md5,(*md5)("Hello World"));
+}
+
+TEST(Unit_crc32,crc32)
+{
+    std::unique_ptr<CRC32>(crc32) = std::make_unique<CRC32>();
+    const char* _crc32 = "4a17b156";
+    EXPECT_EQ(_crc32,(*crc32)("Hello World"));
 }
