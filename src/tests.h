@@ -1,10 +1,11 @@
 #pragma once
+#include <memory>
 #include <gtest/gtest.h>
 #include "sha256.h"
 #include "md5.h"
 #include "sha1.h"
 #include "sha3.h"
-#include <memory>
+
 TEST(Unit_sha256,sha256)
 {
     std::unique_ptr<SHA256>(sha256) = std::make_unique<SHA256>();
