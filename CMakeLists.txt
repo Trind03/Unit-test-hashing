@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.27)
 
-# 'Google_test' is the subproject name
 project(Hash)
 set(CXX_STANDARD 20)
 
@@ -22,6 +21,7 @@ set(KECCAK_DIR "${Algo_DIR}/keccak")
 # 'lib' is the folder with Google Test sources
 add_subdirectory(googletest)
 
+# Adding header files from the following directories.
 include_directories(
     ${GTEST_DIR}
     ${SOURCE_DIR}
