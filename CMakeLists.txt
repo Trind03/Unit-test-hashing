@@ -21,6 +21,7 @@ set(KECCAK_DIR "${Algo_DIR}/keccak")
 
 # 'lib' is the folder with Google Test sources
 add_subdirectory(googletest)
+
 include_directories(
     ${GTEST_DIR}
     ${SOURCE_DIR}
@@ -34,8 +35,7 @@ include_directories(
     ${KECCAK_DIR}
 )
 
-message(${CRC32_DIR})
-# 'Google_Tests_run' is the target name
+
 add_executable (Hash
 ${SOURCE_DIR}/main.cpp
 ${SHA256_DIR}/sha256.cpp
