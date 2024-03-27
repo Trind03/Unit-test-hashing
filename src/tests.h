@@ -6,6 +6,7 @@
 #include "sha1.h"
 #include "sha3.h"
 #include "crc32.h"
+#include "keccak.h"
 
 TEST(Unit_sha256,sha256)
 {
@@ -40,4 +41,11 @@ TEST(Unit_crc32,crc32)
     std::unique_ptr<CRC32>(crc32) = std::make_unique<CRC32>();
     const char* _crc32 = "4a17b156";
     EXPECT_EQ(_crc32,(*crc32)("Hello World"));
+}
+
+TEST(Unit_keccak,keccak)
+{
+    std::unique_ptr<Keccak>(keccak) = std::make_unique<Keccak>();
+    const char* _keccak = "592fa743889fc7f92ac2a37bb1f5ba1daf2a5c84741ca0e0061d243a2e6707ba";
+    EXPECT_EQ(_keccak,(*keccak)("Hello World"));
 }
