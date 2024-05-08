@@ -1,5 +1,6 @@
 #pragma once
 #include <gtest/gtest.h>
+#include <iostream>
 #include "sha256.h"
 #include "md5.h"
 #include "sha1.h"
@@ -9,16 +10,17 @@
 
 TEST(Unit_sha256,sha256)
 {
-    SHA256 sha256;
+    std::unique_ptr<SHA256>sha256 = std::make_unique<SHA256>();
     const char* _sha256 = "a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e";
-    EXPECT_EQ(_sha256,sha256("Hello World"));
+    EXPECT_EQ(_sha256,(*sha256)("Hello World"));
 }
 
 TEST(Unit_sha1,sha1)
 {
+    std::unique_ptr<SHA1>sha1 = std::make_unique<SHA1>();
     SHA1 sha1;
     const char* _sha1 = "0a4d55a8d778e5022fab701977c5d840bbc486d0";
-    EXPECT_EQ(_sha1,sha1("Hello World"));
+    EXPECT_EQ(_sha1,(*sha1)("Hello World"));
 }
 
 TEST(Unit_sha3,sha3)
