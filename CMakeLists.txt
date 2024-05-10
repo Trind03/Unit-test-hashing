@@ -18,10 +18,8 @@ set(KECCAK_DIR "${Algo_DIR}/keccak")
 
 
 
-# 'lib' is the folder with Google Test sources
 add_subdirectory(googletest)
 
-# Adding header files from the following directories.
 include_directories(
     ${GTEST_DIR}
     ${SOURCE_DIR}
