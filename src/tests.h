@@ -8,6 +8,11 @@
 #include "crc32.h"
 #include "keccak.h"
 
+struct hashed
+{
+
+};
+
 TEST(Unit_sha256,sha256)
 {
     std::unique_ptr<SHA256>sha256 = std::make_unique<SHA256>();
