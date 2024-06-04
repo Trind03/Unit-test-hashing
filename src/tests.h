@@ -8,8 +8,15 @@
 #include "crc32.h"
 #include "keccak.h"
 
-struct hashed
+class hashed
 {
+    const char* sha256() { return _sha256; }
+    const char* _sha1() { return _sha1; }
+    const char* _sha3() { return _sha3; }
+    const char* _md5() { return _md5; }
+    const char* _keccak() { return _keccak; }
+    const char* _crc32() { return _crc32; }
+private:
     const char* _sha256 = "a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e";
     const char* _sha1 = "0a4d55a8d778e5022fab701977c5d840bbc486d0";
     const char* _sha3 = "e167f68d6563d75bb25f3aa49c29ef612d41352dc00606de7cbd630bb2665f51";
@@ -21,6 +28,7 @@ struct hashed
 
 TEST(Unit_sha256,sha256)
 {
+    std::unique_ptr<hashed
     std::unique_ptr<SHA256>sha256 = std::make_unique<SHA256>();
     EXPECT_EQ(_sha256,(*sha256)("Hello World"));
 }
